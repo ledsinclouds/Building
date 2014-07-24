@@ -1,0 +1,22 @@
+<?php
+$title = 'Inversion Of Control (Building Controller)';
+echo $this->headTitle($title);
+?>
+<h1><?php echo $title; ?></h1>
+<table >
+<?php
+foreach ($this->building->getBricks() as $key=>$layer)
+{
+	echo '<tr>';
+	foreach ($layer as $brick)
+	{
+		echo '<td style="text-align:center; border:1px solid black; '.
+			'background-color:' . $brick->getColor() . '">';
+		echo $brick->getColor();
+		//echo spl_object_hash($brick);
+		echo '</td>';
+	}
+	echo '</tr>';
+}
+?>
+</table >
